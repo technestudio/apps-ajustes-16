@@ -9,14 +9,7 @@ class SaleReport(models.Model):
     default_code = fields.Char("Referencia interna", readonly=True)
 
     """ 
-    #15.0
-    def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-        fields['marca'] = ", t.x_studio_marca AS marca"
-        fields['barcode'] = ", p.barcode as barcode"
-        fields['default_code'] = ", p.default_code"
-        groupby += ", t.x_studio_marca, p.barcode, p.default_code"
-        return super()._query(with_clause, fields, groupby, from_clause)
-    """
+    #16.0
     
     def _group_by_sale(self):
         groupby = super()._group_by_sale()
@@ -29,6 +22,15 @@ class SaleReport(models.Model):
             'barcode': 'p.barcode',
             'default_code': 'p.default_code',
         }
+
+    """
+    
+    def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
+        fields['marca'] = ", t.x_studio_marca AS marca"
+        fields['barcode'] = ", p.barcode as barcode"
+        fields['default_code'] = ", p.default_code"
+        groupby += ", t.x_studio_marca, p.barcode, p.default_code"
+        return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)
 
     
     
