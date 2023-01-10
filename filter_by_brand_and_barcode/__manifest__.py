@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     
-    'name': "Filtros en informes Tablero y Ventas",    
-    
-    'shortdesc': "Nuevos filtros en informes de Venta.",
+    'name': "Nuevos filtros en Informes de Venta",    
 
     'summary': """
         Incluye un filtro por Marca, 
@@ -12,17 +10,10 @@
     """,
 
     'description': """
-        Filtro por marca, código de barra y referencia interna 
-        en informes Tablero y Ventas del módulo Ventas
-    """,    
-    
-    'description_html': """
-    <span>
         Incluye un filtro por: Marca, Código de barra y Referencia Interna 
         en las vistas: Tablero y Ventas, de la opción de Informes del módulo
         de Ventas. Agrega el campo Marca en la ficha del producto.
-    </span>
-    """,
+    """,    
     
     'author': "Techne Studio IT & Consulting",
     'website': "https://technestudioit.com/",
@@ -34,7 +25,7 @@
     # for the full list
     'category': 'Sale',
     'version': '0.1',    
-    'installed_version': '15.0.0.2',
+    'installed_version': '16.0.0.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'account', 'sale', 'product'],
@@ -44,6 +35,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/product_template_inherited_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
