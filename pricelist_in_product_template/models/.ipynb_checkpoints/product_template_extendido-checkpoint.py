@@ -7,12 +7,13 @@ class ProductTemplateExtendido(models.Model):
     precios_extras_ids = fields.One2many(string='Precios Extras', 
                                          inverse_name="product_tmpl_id",
                                          comodel_name="product.pricelist.item")
-    
+
 
 class ProductProductExtendido(models.Model):
     _inherit = "product.product"
-
+    
     precios_extras_ids = fields.One2many(string='Precios Extras', 
                                          inverse_name="product_id",
                                          comodel_name="product.pricelist.item")
+
 
